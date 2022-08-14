@@ -9,7 +9,7 @@ namespace Su
         /// </summary>
             private void Start()
             {
-                print("うるさい～～");
+                print("きもいい");
             }
 
         /// <summary>
