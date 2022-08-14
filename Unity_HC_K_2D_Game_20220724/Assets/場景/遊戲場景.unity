@@ -7594,7 +7594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710243700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f2c38dbe271173489deec7aad09f401, type: 3}
   m_Name: 
@@ -8146,7 +8146,31 @@ MonoBehaviour:
   weight: 3.5
   brand: BMW
   hasSkyWindow: 1
-  attack: 1500
+  attack: 100
+  Defence: 50
+  Luck: 30
+  Hp: 100
+  speed: 10
+  goCamera: {fileID: 1208674652}
+  colorRed: {r: 1, g: 0, b: 0, a: 1}
+  colorYellow: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  colorCustom1: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  colorCustom2: {r: 0, g: 0, b: 1, a: 0.5}
+  V2right: {x: 1, y: 0}
+  V2left: {x: -1, y: 0}
+  V2Custom: {x: 2, y: 1}
+  V3Custom: {x: 0, y: 0, z: 1}
+  V4Custom: {x: 0, y: 2, z: 1, w: 3}
+  Layer:
+    serializedVersion: 2
+    m_Bits: 0
+  LightType: 0
+  LightTypeArea: 3
+  keyA: 285
+  jump: 32
+  tri: {fileID: 1514054900}
+  ani: {fileID: 1514054898}
+  spi: {fileID: 1514054899}
 --- !u!4 &1200276633
 Transform:
   m_ObjectHideFlags: 0
@@ -8768,6 +8792,7 @@ GameObject:
   - component: {fileID: 1514054898}
   - component: {fileID: 1514054902}
   - component: {fileID: 1514054901}
+  - component: {fileID: 1514054903}
   m_Layer: 0
   m_Name: "\u5DEB\u5E2B"
   m_TagString: Untagged
@@ -8899,6 +8924,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1514054903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514054897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac79388db6b74a9773e4bdc1862a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 10
+  MoveName: "\u95DC\u95DC\u8DD1\u6B65"
 --- !u!4 &1665697381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1112669315938093653, guid: b9362d53dadba094ab223bc82d130a8e, type: 3}
