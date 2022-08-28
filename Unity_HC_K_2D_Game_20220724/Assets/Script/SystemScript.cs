@@ -26,10 +26,9 @@ namespace Su
             ani.SetBool(MoveName, h != 0);
             if (Mathf.Abs(h) < 0.1f) return;
             float yangle = h > 0 ? 0 : 180;
-            transform.eulerAngles = new Vector3(0, yangle, 0);
-            
-        #endregion
+            transform.eulerAngles = new Vector3(0, yangle, 0);       
         }
+        #endregion
 
         #region ¨Æ¥ó
         private void Awake()
