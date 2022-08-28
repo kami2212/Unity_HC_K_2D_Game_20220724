@@ -20,8 +20,7 @@ namespace Su
         [SerializeField]private Vector3 backgroundsize;
         [SerializeField]private Vector3 backgroundoffset;
 
-        private Rigidbody2D rig;//剛體元件
-        private Animator ani;//動畫元件
+       
         #endregion
 
 
