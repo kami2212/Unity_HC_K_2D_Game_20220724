@@ -4,7 +4,7 @@ namespace Su
     public class JumpSystem : MonoBehaviour
     {
         #region 資料
-        [Range(0, 100), Tooltip("跳躍高度"), SerializeField]
+        [Range(0, 1000), Tooltip("跳躍高度"), SerializeField]
         private float jump = 5;//移動速度
         [Tooltip("跳躍參數名稱"), SerializeField]
         private string JumpName = "關關跳躍";//移動動畫參數名稱
@@ -17,12 +17,24 @@ namespace Su
         [Header("地板顏色"), SerializeField]
         private Color background = new Color(1, 0, 0);
         [Header("地板尺寸")]
-        [SerializeField]private Vector3 backgroundsize;
-        [SerializeField]private Vector3 backgroundoffset;
-
-       
+        [SerializeField] private Vector3 backgroundsize;
+        [SerializeField] private Vector3 backgroundoffset;
+        [SerializeField, Header("偵測地板圖層")]
+        private LayerMask layerMask;
+        private bool isGround;
         #endregion
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = background;
+            Gizmos.DrawCube(transform.position + backgroundoffset, backgroundsize);
+        }
 
+        private void Groundhit()
+        {
+            Collider2D hit = Physics2D.OverlapBox(transform.position + backgroundoffset, backgroundsize, 0, layerMask);
+            //print(hit);
+            isGround = hit;
+        }
 
         #region 方法
         /// <summary>
@@ -30,7 +42,10 @@ namespace Su
         /// </summary>
         private void Jump()
         {
-            
+            if (isGround && Input.GetKey(KeyCode.Space))
+            {
+                rig.AddForce(new Vector2(0,jump));
+            }
         }
         #endregion
 
@@ -42,6 +57,7 @@ namespace Su
         }
         private void Update()
         {
+            Groundhit();
             Jump();
         }
         #endregion

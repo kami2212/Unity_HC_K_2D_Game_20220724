@@ -21,7 +21,7 @@ namespace Su
         private void Move()
         {
             float h = Input.GetAxis("Horizontal");
-            print("水平數值:" + h);
+            //print("水平數值:" + h);
             rig.velocity = new Vector2(h * MoveSpeed, rig.velocity.y);
             ani.SetBool(MoveName, h != 0);
             if (Mathf.Abs(h) < 0.1f) return;
