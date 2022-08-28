@@ -20,18 +20,26 @@ namespace Su
         /// </summary>
         private void Move()
         {
+            float h = Input.GetAxis("Horizontal");
+            print("水平數值:" + h);
+            rig.velocity = new Vector2(h * MoveSpeed, rig.velocity.y);
+            ani.SetBool(MoveName, h != 0);
+            if (Mathf.Abs(h) < 0.1f) return;
+            float yangle = h > 0 ? 0 : 180;
+            transform.eulerAngles = new Vector3(0, yangle, 0);
             
-        }
         #endregion
+        }
 
         #region 事件
         private void Awake()
         {
-            
+            ani = GetComponent<Animator>();
+            rig = GetComponent<Rigidbody2D>();
         }
         private void Update()
         {
-            
+            Move();
         }
         #endregion
 
