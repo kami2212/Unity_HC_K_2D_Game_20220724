@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2902d2ea842056840853dcef71c2b049, type: 3}
+  m_Name: NPCData
+  m_EditorClassIdentifier: 
+  NPCName: "\u85CD\u5DEB"
+  NPCConst:
+  - "\u6316\u7CD9,\u4F60\u53C8\u662F\u5F9E\u54EA\u4F86\u7684\u5DEB\u5E2B,\u4E00\u81C9\u7AAE\u9178\u6A23"
+  - "\u770B\u8D77\u4F86\u5C31\u5F88\u9700\u8981\u9322\u9322,\u90A3\u6211\u5C31\u7D66\u4F60\u4EFB\u52D9\u5427"
+  - "\u4EFB\u52D9\u5167\u5BB9...\n"
