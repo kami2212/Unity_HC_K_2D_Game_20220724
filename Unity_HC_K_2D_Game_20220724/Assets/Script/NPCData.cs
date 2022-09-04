@@ -8,6 +8,8 @@ namespace Su
         public string NPCName;
         [Header("對話內容"),TextArea(3,10)]
         public string[] NPCConst;
+        [Header("NPC名稱")]
+        public string cameraname;
     }
 }
 

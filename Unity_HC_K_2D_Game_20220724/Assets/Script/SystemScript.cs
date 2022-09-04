@@ -42,6 +42,13 @@ namespace Su
         }
         #endregion
 
+        private void OnDisable()
+        {
+            rig.position = new Vector2(5.5f, -2.7f);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            rig.velocity= new Vector2(0, 0);
+            ani.SetBool(MoveName, false);
+        }
     }
 }
 
