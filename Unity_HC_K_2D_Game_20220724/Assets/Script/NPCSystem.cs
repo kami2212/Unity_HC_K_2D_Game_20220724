@@ -7,39 +7,56 @@ namespace Su
     public class NPCSystem : MonoBehaviour
     {
 
-        #region ���}���
-        [SerializeField, Header("�}�l��ܫ���")]
+        #region 公開資料
+        [SerializeField, Header("開始對話按鍵")]
         private KeyCode keyStartDialogue = KeyCode.E;
-        [SerializeField, Header("NPC���")]
+        [SerializeField, Header("NPC資料")]
         private NPCData NPCData;
         private DialogueSystem DialogueSystem;
         #endregion
 
-        #region �n�������
+        #region 要停止的元件
         private JumpSystem jumpSystem;
         private SystemScript systemScript;
         #endregion
 
-
+        #region 私人資料
+        /// <summary>
+        /// 畫布提示
+        /// </summary>
         private CanvasGroup canvasGroup;
-        private string witch = "�Ův";
-        bool isInArea;
-        bool isDialogue;
 
+        private string witch = "巫師";
+        bool isInArea;
+
+        /// <summary>
+        /// 是否對話中
+        /// </summary>
+        bool isDialogue;
+        #endregion
+
+        //Ctrl+R R 對有使用到該筆資料名稱重新命名
+        /// <summary>
+        /// NPC CM 攝影機
+        /// </summary>
 
         private void Awake()
         {
-            canvasGroup = GameObject.Find("�e������").GetComponent<CanvasGroup>();
+            canvasGroup = GameObject.Find("畫布提示").GetComponent<CanvasGroup>();
             jumpSystem = FindObjectOfType<JumpSystem>();
             systemScript = FindObjectOfType<SystemScript>();
             DialogueSystem = FindObjectOfType<DialogueSystem>();
-            
+
         }
+
         private void Update()
         {
             InputAndStartDialogue();
         }
 
+        /// <summary>
+        /// 輸入按鍵偵測並且開始對話
+        /// </summary>
         private void InputAndStartDialogue()
         {
             if (isDialogue) return;
@@ -49,12 +66,25 @@ namespace Su
                 isDialogue = true;
                 jumpSystem.enabled = false;
                 systemScript.enabled = false;
+                
+
                 StopAllCoroutines();
                 StartCoroutine(otenter(false));
 
-                DialogueSystem.StartDialogue();
+                StartCoroutine(DialogueSystem.StartDialogue(NPCData,DialogueFinish));
             }
         }
+
+        /// <summary>
+        /// 對話結束後處理
+        /// </summary>
+        private void DialogueFinish()
+        {
+            isDialogue = false;
+            jumpSystem.enabled = true;
+            systemScript.enabled = true;
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.name.Contains(witch))
@@ -75,6 +105,11 @@ namespace Su
             }
         }
 
+        /// <summary>
+        /// 淡入淡出
+        /// </summary>
+        /// <param name="fadeIn"></param>
+        /// <returns></returns>
         private IEnumerator otenter(bool fadeIn = true)
         {
             canvasGroup.alpha = fadeIn ? 0 : 1;

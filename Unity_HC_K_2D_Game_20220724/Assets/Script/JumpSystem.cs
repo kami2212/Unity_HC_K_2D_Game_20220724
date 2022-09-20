@@ -3,23 +3,23 @@ namespace Su
 {
     public class JumpSystem : MonoBehaviour
     {
-        #region ¸ê®Æ
-        [Range(0, 1000), Tooltip("¸õÅD°ª«×"), SerializeField]
-        private float jump = 5;//²¾°Ê³t«×
-        [Tooltip("¸õÅD°Ñ¼Æ¦WºÙ"), SerializeField]
-        private string JumpName = "ÃöÃö¸õÅD";//²¾°Ê°Êµe°Ñ¼Æ¦WºÙ
+        #region è³‡æ–™
+        [Range(0, 1000), Tooltip("è·³èºé«˜åº¦"), SerializeField]
+        private float jump = 5;//ç§»å‹•é€Ÿåº¦
+        [Tooltip("è·³èºåƒæ•¸åç¨±"), SerializeField]
+        private string JumpName = "é—œé—œè·³èº";//ç§»å‹•å‹•ç•«åƒæ•¸åç¨±
 
-        private Rigidbody2D rig;//­èÅé¤¸¥ó
-        private Animator ani;//°Êµe¤¸¥ó
+        private Rigidbody2D rig;//å‰›é«”å…ƒä»¶
+        private Animator ani;//å‹•ç•«å…ƒä»¶
         #endregion
 
-        #region ¦aªO¸ê®Æ
-        [Header("¦aªOÃC¦â"), SerializeField]
+        #region åœ°æ¿è³‡æ–™
+        [Header("åœ°æ¿é¡è‰²"), SerializeField]
         private Color background = new Color(1, 0, 0);
-        [Header("¦aªO¤Ø¤o")]
+        [Header("åœ°æ¿å°ºå¯¸")]
         [SerializeField] private Vector3 backgroundsize;
         [SerializeField] private Vector3 backgroundoffset;
-        [SerializeField, Header("°»´ú¦aªO¹Ï¼h")]
+        [SerializeField, Header("åµæ¸¬åœ°æ¿åœ–å±¤")]
         private LayerMask layerMask;
         private bool isGround;
         #endregion
@@ -36,9 +36,9 @@ namespace Su
             isGround = hit;
         }
 
-        #region ¤èªk
+        #region æ–¹æ³•
         /// <summary>
-        /// ¸õÅD¤èªk
+        /// è·³èºæ–¹æ³•
         /// </summary>
         private void Jump()
         {
@@ -49,7 +49,7 @@ namespace Su
         }
         #endregion
 
-        #region ¨Æ¥ó
+        #region äº‹ä»¶
         private void Awake()
         {
             ani = GetComponent<Animator>();
