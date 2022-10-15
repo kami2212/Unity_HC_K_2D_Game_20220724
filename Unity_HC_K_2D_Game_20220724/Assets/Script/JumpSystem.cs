@@ -44,7 +44,7 @@ namespace Su
         {
             if (isGround && Input.GetKey(KeyCode.Space))
             {
-                rig.AddForce(new Vector2(0,jump));
+                rig.AddForce(new Vector2(0, jump));
             }
         }
         #endregion

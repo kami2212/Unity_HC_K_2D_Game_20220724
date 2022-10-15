@@ -705,7 +705,8 @@ GameObject:
   - component: {fileID: 469044618}
   - component: {fileID: 469044617}
   - component: {fileID: 469044619}
-  m_Layer: 0
+  - component: {fileID: 469044620}
+  m_Layer: 7
   m_Name: "\u602A\u7269"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469044613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.35, y: 3.09, z: 0}
+  m_LocalPosition: {x: 51.48, y: 3.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -849,6 +850,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyData: {fileID: 11400000, guid: 809b451f701d0b841a6094da9eefa193, type: 2}
+  nameAnimationAttack: "\u602A\u7269_\u653B\u64CA"
+--- !u!114 &469044620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469044613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48703beb22143eb4f8c57aaa30023992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackdata: {fileID: 11400000, guid: 809b451f701d0b841a6094da9eefa193, type: 2}
 --- !u!1 &470657568
 GameObject:
   m_ObjectHideFlags: 0
@@ -8619,7 +8634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859652341}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1704144, y: -2.5699997, z: -10}
+  m_LocalPosition: {x: 21.54602, y: -1.4099997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9885,7 +9900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208674652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1704144, y: -2.5699997, z: -10}
+  m_LocalPosition: {x: 21.54602, y: -1.4099997, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10525,8 +10540,9 @@ GameObject:
   - component: {fileID: 1514054902}
   - component: {fileID: 1514054901}
   - component: {fileID: 1514054903}
+  - component: {fileID: 1514054906}
   - component: {fileID: 1514054905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\u5DEB\u5E2B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10618,8 +10634,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17}
-  m_Size: {x: 0.8, y: 1.36}
+  m_Offset: {x: -0.023592183, y: -0.3651797}
+  m_Size: {x: 0.29445478, y: 0.9696423}
   m_Direction: 0
 --- !u!50 &1514054902
 Rigidbody2D:
@@ -10636,7 +10652,7 @@ Rigidbody2D:
   m_Mass: 1.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.5
+  m_GravityScale: 1.8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -10673,7 +10689,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: -2.57}
+  m_AnchoredPosition: {x: 16.38, y: -1.41}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514054905
@@ -10688,14 +10704,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b33382d3c782e49a2b97d0b100c9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 330
+  jump: 390
   JumpName: "\u95DC\u95DC\u8DF3\u8E8D"
   background: {r: 1, g: 0, b: 0, a: 0.4627451}
   backgroundsize: {x: 0.85, y: 0.15, z: 0}
-  backgroundoffset: {x: -0.14, y: -1.4, z: 0}
+  backgroundoffset: {x: -0.17, y: -1.35, z: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &1514054906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514054897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d3e55462962d4479417eddce6d9849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackdata: {fileID: 11400000, guid: fcc2c66aa97743842add7821ec779eb0, type: 2}
+  keyAttack: 323
 --- !u!1 &1733741895
 GameObject:
   m_ObjectHideFlags: 0

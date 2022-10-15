@@ -111,7 +111,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: "\u653B\u64CA\u89F8\u767C"
+    m_ConditionEvent: "\u89F8\u767C\u653B\u64CA"
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: "\u95DC\u95DC\u6B7B\u4EA1"
@@ -271,7 +271,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: "\u653B\u64CA\u89F8\u767C"
+  - m_Name: "\u89F8\u767C\u653B\u64CA"
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
