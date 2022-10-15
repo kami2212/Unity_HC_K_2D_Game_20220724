@@ -4,6 +4,7 @@ namespace Su
 {
     public class EnemySystem : MonoBehaviour
     {
+        #region 資料
         [SerializeField, Header("敵人資料")]
         private EnemyData EnemyData;
         private Rigidbody2D rig;
@@ -16,7 +17,9 @@ namespace Su
 
         [SerializeField, Header("動畫控制器攻擊動畫名稱")]
         private string nameAnimationAttack = "怪物_攻擊";
+        #endregion
 
+        #region 事件
         private void Awake()
         {
             rig = GetComponent<Rigidbody2D>();
@@ -47,6 +50,13 @@ namespace Su
             Gizmos.DrawLine(transform.position, transform.position + -transform.right * EnemyData.attackRange);
         }
 
+        private void OnDisable()
+        {
+            rig.velocity = Vector3.zero;
+        }
+        #endregion
+
+        #region 方法
         /// <summary>
         /// 偵測前方是否有地板
         /// </summary>
@@ -125,6 +135,8 @@ namespace Su
             rig.velocity = Vector3.zero;
             enemyAttack.StartAttack();
         }
+
+        #endregion
     }
 
 }

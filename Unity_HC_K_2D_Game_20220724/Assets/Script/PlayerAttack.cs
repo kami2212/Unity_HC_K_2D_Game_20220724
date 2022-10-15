@@ -43,6 +43,7 @@ namespace Su
         protected override void StopAttack()
         {
             base.StopAttack();
+
             movesystem.enabled = true;
             jumpSystem.enabled = true;
         }

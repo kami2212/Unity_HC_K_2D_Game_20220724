@@ -22,11 +22,15 @@ namespace Su
             Gizmos.DrawCube(transform.position + transform.TransformDirection(attackdata.attackAreaOffset), attackdata.attackAreaSize);
         }
 
+        /// <summary>
+        /// 檢查攻擊區域
+        /// </summary>
         private void CheckAttackArea()
         {
             Collider2D hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(attackdata.attackAreaOffset), attackdata.attackAreaSize, 0, attackdata.attackAreaLayer);
-            print("攻擊到的物件:" + hit);
-            
+            //print("攻擊到的物件:" + hit);
+
+           if(hit) hit.GetComponent<HealthSystem>().Hurt(attackdata.attack);
             /*lookAttackTarget = hit;
             if (hit) traAttackTarget = hit.transform;*/
         }
@@ -41,6 +45,7 @@ namespace Su
             ani.SetTrigger(attackdata.parAttack);
             StartCoroutine(Attacking());
         }
+
         /// <summary>
         /// 攻擊中
         /// </summary>

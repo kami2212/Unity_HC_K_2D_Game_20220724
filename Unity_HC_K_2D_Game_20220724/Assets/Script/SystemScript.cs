@@ -3,25 +3,25 @@ namespace Su
 {
     public class SystemScript : MonoBehaviour
     {
-        #region ¸ê®Æ
-        [Range(0,10),Tooltip("²¾°Ê³t«×"),SerializeField]
-        private int MoveSpeed = 10;//²¾°Ê³t«×
-        [Tooltip("²¾°Ê°Êµe°Ñ¼Æ¦WºÙ"), SerializeField]
-        private string MoveName = "ÃöÃö¶]¨B";//²¾°Ê°Êµe°Ñ¼Æ¦WºÙ
+        #region è³‡æ–™
+        [Range(0,10),Tooltip("ç§»å‹•é€Ÿåº¦"),SerializeField]
+        private int MoveSpeed = 10;//ç§»å‹•é€Ÿåº¦
+        [Tooltip("ç§»å‹•å‹•ç•«åƒæ•¸åç¨±"), SerializeField]
+        private string MoveName = "é—œé—œè·‘æ­¥";//ç§»å‹•å‹•ç•«åƒæ•¸åç¨±
 
-        private Rigidbody2D rig;//­èÅé¤¸¥ó
-        private Animator ani;//°Êµe¤¸¥ó
+        private Rigidbody2D rig;//å‰›é«”å…ƒä»¶
+        private Animator ani;//å‹•ç•«å…ƒä»¶
         #endregion
 
 
-        #region ¤èªk
+        #region æ–¹æ³•
         /// <summary>
-        /// ²¾°Ê¤èªk
+        /// ç§»å‹•æ–¹æ³•
         /// </summary>
         private void Move()
         {
             float h = Input.GetAxis("Horizontal");
-            //print("¤ô¥­¼Æ­È:" + h);
+            //print("æ°´å¹³æ•¸å€¼:" + h);
             rig.velocity = new Vector2(h * MoveSpeed, rig.velocity.y);
             ani.SetBool(MoveName, h != 0);
             if (Mathf.Abs(h) < 0.1f) return;
@@ -30,7 +30,7 @@ namespace Su
         }
         #endregion
 
-        #region ¨Æ¥ó
+        #region äº‹ä»¶
         private void Awake()
         {
             ani = GetComponent<Animator>();
@@ -44,7 +44,6 @@ namespace Su
 
         private void OnDisable()
         {
-            rig.position = new Vector2(5.5f, -2.7f);
             transform.eulerAngles = new Vector3(0, 0, 0);
             rig.velocity= new Vector2(0, 0);
             ani.SetBool(MoveName, false);

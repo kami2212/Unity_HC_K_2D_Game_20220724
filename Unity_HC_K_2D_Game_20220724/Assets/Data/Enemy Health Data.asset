@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0324139ae24b445a2c49f9e20d6a35, type: 3}
+  m_Name: Enemy Health Data
+  m_EditorClassIdentifier: 
+  hp: 0
+  parDead: 
+  dropProbility: 0
+  prefabprop: {fileID: 0}
