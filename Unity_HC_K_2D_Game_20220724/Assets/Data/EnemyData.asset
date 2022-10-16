@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331f8c48f1816b14a86ad461bab7a3e5, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  attack: 30
+  attack: 50
   attackAreaColor: {r: 0, g: 1, b: 0.2, a: 0.7}
   attackAreaSize: {x: 2.5, y: 3, z: 1}
   attackAreaOffset: {x: -1.5, y: 0, z: 0}
@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Bits: 64
   parAttack: "\u89F8\u767C\u653B\u64CA"
   attackTime: 0.9
-  delaySendDamage: 0.3
+  delaySendDamage: 0.35
   speed: 3.5
   checkGroundColor: {r: 1, g: 0.5, b: 0.3, a: 0.3}
   checkGroundoffset: {x: -1.15, y: -1.17, z: 0}

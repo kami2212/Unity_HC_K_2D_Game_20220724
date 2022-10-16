@@ -15,6 +15,7 @@ namespace Su
             if (collision.gameObject.name.Contains(nameTarget))
             {
                 ObjectpoolEnemyDrop.instance.ReleasePoolObject(gameObject);
+                MissionManger.instance.UpdateMissioncount(1);
             }
         }
     }

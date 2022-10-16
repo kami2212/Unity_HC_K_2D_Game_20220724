@@ -44,7 +44,7 @@ namespace Su
 
         private void OnDisable()
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            //transform.eulerAngles = new Vector3(0, 0, 0);
             rig.velocity= new Vector2(0, 0);
             ani.SetBool(MoveName, false);
         }

@@ -12,12 +12,12 @@ namespace Su
         [SerializeField, Header("要關閉的元件")]
         private Behaviour[] behavioursToClose;
 
-        private float hp;
-        private float hpMax;
+        protected float hp;
+        protected float hpMax;
 
         private Animator ani;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             ani = GetComponent<Animator>();
             hp = HealthData.hp;
@@ -28,7 +28,7 @@ namespace Su
         /// 受傷
         /// </summary>
         /// <param name="getDamage"></param>
-        public void Hurt(float getDamage)
+        public virtual void Hurt(float getDamage)
         {
             hp -= getDamage;
             if (hp <= 0) Dead();
@@ -47,6 +47,16 @@ namespace Su
             for(int i=0;i<behavioursToClose.Length;i++)
             {
                 behavioursToClose[i].enabled = false;
+            }
+        }
+
+        protected virtual void OnEnable()
+        {
+            hp = HealthData.hp;
+
+            for (int i = 0; i < behavioursToClose.Length; i++)
+            {
+                behavioursToClose[i].enabled = true;
             }
         }
     }

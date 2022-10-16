@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0324139ae24b445a2c49f9e20d6a35, type: 3}
   m_Name: Enemy Health Data
   m_EditorClassIdentifier: 
-  hp: 0
-  parDead: 
-  dropProbility: 0
-  prefabprop: {fileID: 0}
+  hp: 30
+  parDead: "\u6B7B\u4EA1\u89F8\u767C"
+  dropProbility: 1
+  prefabprop: {fileID: 5480791724911174083, guid: dc7ad7c37e03c914c9e511bd47d5c827, type: 3}

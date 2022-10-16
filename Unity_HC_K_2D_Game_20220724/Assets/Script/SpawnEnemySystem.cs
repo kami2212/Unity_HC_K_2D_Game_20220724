@@ -10,14 +10,25 @@ namespace Su
     {
         [SerializeField, Header("生成時間範圍")]
         private Vector2 rangeSpawn = new Vector2(0.5f, 1.5f);
+
+        private GameObject tempEnemy;
+
         private void Start()
         {
             SpawnEnemy();
         }
         private void SpawnEnemy()
         {
-            GameObject tempEnemy = ObjectpoolEnemy.instance.GetPoolObject();
+            tempEnemy = ObjectpoolEnemy.instance.GetPoolObject();
             tempEnemy.transform.position = transform.position;
+            tempEnemy.GetComponent<EnemyHealth>().onDead = EnemyRelease;
+        }
+
+        private void EnemyRelease()
+        {
+            ObjectpoolEnemy.instance.ReleasePoolObject(tempEnemy);
+
+            Invoke("SpawnEnemy", Random.Range(rangeSpawn.x, rangeSpawn.y));
         }
     }
 }

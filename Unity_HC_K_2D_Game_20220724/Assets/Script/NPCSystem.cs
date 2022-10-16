@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using UnityEngine;
 
@@ -11,13 +12,14 @@ namespace Su
         [SerializeField, Header("開始對話按鍵")]
         private KeyCode keyStartDialogue = KeyCode.E;
         [SerializeField, Header("NPC資料")]
-        private NPCData NPCData;
+        public NPCData NPCData;
         private DialogueSystem DialogueSystem;
         #endregion
 
         #region 要停止的元件
         private JumpSystem jumpSystem;
         private SystemScript systemScript;
+        private PlayerAttack PlayerAttack;
         #endregion
 
         #region 私人資料
@@ -39,12 +41,16 @@ namespace Su
         /// <summary>
         /// NPC CM 攝影機
         /// </summary>
+        private CinemachineVirtualCamera cvcCM;
 
         private void Awake()
         {
             canvasGroup = GameObject.Find("畫布提示").GetComponent<CanvasGroup>();
+
+            cvcCM = GameObject.Find(NPCData.cameraname).GetComponent<CinemachineVirtualCamera>();
             jumpSystem = FindObjectOfType<JumpSystem>();
             systemScript = FindObjectOfType<SystemScript>();
+            PlayerAttack = FindObjectOfType<PlayerAttack>();
             DialogueSystem = FindObjectOfType<DialogueSystem>();
 
         }
@@ -66,7 +72,8 @@ namespace Su
                 isDialogue = true;
                 jumpSystem.enabled = false;
                 systemScript.enabled = false;
-                
+                PlayerAttack.enabled = false;
+                cvcCM.Priority = 11;
 
                 StopAllCoroutines();
                 StartCoroutine(otenter(false));
@@ -83,6 +90,8 @@ namespace Su
             isDialogue = false;
             jumpSystem.enabled = true;
             systemScript.enabled = true;
+            PlayerAttack.enabled = true;
+            cvcCM.Priority = 9;
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

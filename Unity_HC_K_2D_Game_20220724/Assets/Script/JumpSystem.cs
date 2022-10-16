@@ -42,7 +42,7 @@ namespace Su
         /// </summary>
         private void Jump()
         {
-            if (isGround && Input.GetKey(KeyCode.Space))
+            if (isGround && Input.GetKeyDown(KeyCode.Space))
             {
                 rig.AddForce(new Vector2(0, jump));
             }

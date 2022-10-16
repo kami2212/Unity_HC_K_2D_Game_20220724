@@ -9,6 +9,12 @@ namespace Su
         public delegate void delegateDead();
         public delegateDead onDead;
 
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            gameObject.layer = 7;
+        }
+
         protected override void Dead()
         {
             base.Dead();

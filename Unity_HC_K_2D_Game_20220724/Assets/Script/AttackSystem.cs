@@ -7,6 +7,8 @@ namespace Su
     {
         [SerializeField, Header("攻擊資料")]
         private attackdata attackdata;
+        [SerializeField, Header("攻擊音效")]
+        private AudioClip soundAttack;
 
         private Animator ani;
         private bool isAttacking;
@@ -20,6 +22,10 @@ namespace Su
         {
             Gizmos.color = attackdata.attackAreaColor;
             Gizmos.DrawCube(transform.position + transform.TransformDirection(attackdata.attackAreaOffset), attackdata.attackAreaSize);
+        }
+        private void OnEnable()
+        {
+            isAttacking = false;
         }
 
         /// <summary>
@@ -44,6 +50,8 @@ namespace Su
             isAttacking = true;
             ani.SetTrigger(attackdata.parAttack);
             StartCoroutine(Attacking());
+
+            SoundManger.instance.PlaySound(soundAttack, new Vector2(1.8f, 2f));
         }
 
         /// <summary>
